@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public float moveSpeed;
     public float lerpValue = 0.2f;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     public float tiltAngle = 15f;
     public float tiltSpeed = 0.2f;
@@ -21,9 +21,11 @@ public class Player : MonoBehaviour
 
     public Upgrades upgrades;
 
-    void Start()
+    [SerializeField] private AudioSource _fallingAudioSource;
+
+    private void Awake()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -35,6 +37,16 @@ public class Player : MonoBehaviour
             TiltPlayer(horizontalInput, tiltSpeed);
             HandleSpriteChange();
         }
+    }
+
+    private void OnEnable()
+    {
+        _fallingAudioSource.Play();
+    }
+
+    private void OnDisable()
+    {
+        _fallingAudioSource.Stop();
     }
 
     private void MovePlayer(float horizontalInput)

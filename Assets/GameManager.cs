@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] DangersSpawner dangersSpawner;
     [SerializeField] DangersSpawner objectSpawner;
     [SerializeField] CounterHandler counterHandler;
+
     float timer;
     float distance;
     PlayerHealth playerHealth;

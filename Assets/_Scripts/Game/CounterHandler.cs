@@ -8,22 +8,23 @@ public class CounterHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI diamondText;
     [SerializeField] private TextMeshProUGUI distanceText;
     [SerializeField] private TextMeshProUGUI lastScoreText;
-    public TMP_Text highscoreText;
-    // value changed by the game manager, it stands for the falling speed of the player
     [SerializeField] public float metersEachFrame = 0.1f;
     [SerializeField] BGScroll[] bgs;
+
+    public TMP_Text highscoreText; // value changed by the game manager, it stands for the falling speed of the player
     public float distance;
     public bool canCount;
     public GameObject information;
     public TMP_Text hs;
     public static float lastDistance = 0;
 
-    void Start()
+    private void Start()
     {
-        highscoreText.text = DistString(PlayerPrefs.GetFloat("Highscore", 0));
-        lastScoreText.text = DistString(lastDistance);
+        highscoreText.text = $"High Score: {DistString(PlayerPrefs.GetFloat("Highscore", 0))}";
+        lastScoreText.text = $"Last Score: {DistString(lastDistance)}";
     }
-    string DistString(float highscore) {
+
+    private string DistString(float highscore) {
         if(highscore < 999) return highscore.ToString("0") + "m";
         else if(highscore < 99999) return (highscore / 1000).ToString("0.0") + "km";
         else return ((int) (highscore / 1000)).ToString() + "km";

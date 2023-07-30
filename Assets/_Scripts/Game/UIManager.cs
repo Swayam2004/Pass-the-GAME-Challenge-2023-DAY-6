@@ -6,8 +6,8 @@ public class UIManager : MonoBehaviour
 {
 
     /* Day3 developer here:
-    * This script was written by the previous developers and it handles the display of hearths.
-    * You shouldn't really touch this, at least try to no to break it as it is super important for the rest 
+    * This script was written by the previous developers and it handles the display of hearts.
+    * You shouldn't really touch this, at least try to not break it as it is super important for the rest 
     * of the project structure :D
     */
 
@@ -20,12 +20,14 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         playerHealth = PlayerHealth.instance;
+
         playerHealth.DamageTaken += UpdateHearts;
         playerHealth.HealthUpgraded += AddHearts;
+
         for(int i = 0; i < playerHealth.maxHealth; i++)
         {
             GameObject h = Instantiate(heart, this.transform);
-            hearts.Add(h.GetComponent<Image>());
+            hearts.Add(h.GetComponent<SingleHeartUI>().GetHeartImage());
         }
         
     }
@@ -50,13 +52,16 @@ public class UIManager : MonoBehaviour
             {
                 Destroy(i.gameObject);
             }
+
             hearts.Clear();
+
             for (int i = 0; i < playerHealth.maxHealth; i++)
             {
                 GameObject h = Instantiate(heart, this.transform);
-                hearts.Add(h.GetComponent<Image>());
+                hearts.Add(h.GetComponent<SingleHeartUI>().GetHeartImage());
             }
         }
+
         UpdateHearts();
     }
 }
