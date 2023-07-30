@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     float timer;
     float distance;
     PlayerHealth playerHealth;
+    private bool _gameLoaded = false;
 
     private void Awake()
     {
@@ -33,9 +34,10 @@ public class GameManager : MonoBehaviour
             timer += Time.deltaTime;
             distance = counterHandler.distance;
         }
-        if (playerHealth.isdead)
+        if (playerHealth.isdead && !_gameLoaded)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            LevelManager.Instance.Load(SceneManager.GetActiveScene().buildIndex);
+            _gameLoaded = true;
         }
         HandleCurves();
     }

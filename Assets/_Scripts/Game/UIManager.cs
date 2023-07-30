@@ -50,7 +50,7 @@ public class UIManager : MonoBehaviour
         {
             foreach (Image i in hearts)
             {
-                Destroy(i.gameObject);
+                Destroy(i.transform.parent.gameObject);
             }
 
             hearts.Clear();

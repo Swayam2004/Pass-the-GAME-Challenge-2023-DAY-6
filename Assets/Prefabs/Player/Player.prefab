@@ -57,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -174,15 +174,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rb: {fileID: 3675199335966357006}
-  shootKey: 8
+  lerpValue: 0.2
   tiltAngle: 15
+  tiltSpeed: 0.2
   platforms:
     serializedVersion: 2
     m_Bits: 64
   up: {fileID: 21300000, guid: 95ca01ac8f9003346a6795b01b64995d, type: 3}
   right: {fileID: 21300000, guid: 1f5ca484a69d2dc4e9d548fa93a9d338, type: 3}
   left: {fileID: 21300000, guid: 4356b912268f4c24f9221bad9c66d214, type: 3}
+  diamondAmount: 0
+  diamondsCollected: 0
+  upgrades: {fileID: 0}
+  _fallingAudioSource: {fileID: 0}
 --- !u!114 &4535077356556986740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +199,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84b11be11d71c64987bb733df6ab70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 0}
+  hitsfx: {fileID: 0}
+  collectsfx: {fileID: 0}
+  redHeart: {fileID: 0}
+  diamond: {fileID: 0}
+  emptyHeart: {fileID: 0}
+  rocketCollision: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &4487306621897270504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,3 +220,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
+  isdead: 0
+  health: 0
+  counter: {fileID: 0}
