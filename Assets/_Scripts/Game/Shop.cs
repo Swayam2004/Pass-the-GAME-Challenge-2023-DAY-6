@@ -27,8 +27,10 @@ public class Shop : MonoBehaviour
         if (Input.GetKeyDown("c") && !isOpen && GetComponent<StartGame>().canStartGame == true && GetComponent<StartGame>().isGameStarted == false)
         {
             Upgrades.instance.source.PlayOneShot(Upgrades.instance.select);
+
             shop.SetActive(true);
             menu.SetActive(false);
+
             menuAnim.Play("Base Layer.Menu", 0);
             isOpen = true;
             GetComponent<StartGame>().canStartGame = false;
@@ -36,8 +38,10 @@ public class Shop : MonoBehaviour
         else if (Input.GetKeyDown("c") && isOpen && GetComponent<StartGame>().canStartGame == false && GetComponent<StartGame>().isGameStarted == false)
         {
             Upgrades.instance.source.PlayOneShot(Upgrades.instance.select);
+
             shop.SetActive(false);
             menu.SetActive(true);
+
             menuAnim.Play("Base Layer.Menu", 0);
             isOpen = false;
             GetComponent<StartGame>().canStartGame = true;

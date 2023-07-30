@@ -20,12 +20,15 @@ public class StartGame : MonoBehaviour
         if (Input.GetKeyDown("r") && canStartGame)
         {
             Upgrades.instance.source.PlayOneShot(Upgrades.instance.select);
+
             Manager.SetActive(true);
             Spawners.SetActive(true);
             CounterManager.SetActive(true);
             menu.SetActive(false);
+
             GetComponent<Player>().enabled = true;
             GetComponent<PlayerCollision>().enabled = true;
+
             canStartGame = false;
             isGameStarted = true;
         }
