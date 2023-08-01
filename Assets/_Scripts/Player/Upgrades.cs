@@ -5,21 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class Upgrades : MonoBehaviour
 {
+    public static Upgrades Instance;
+
     public GameObject fasterButton, diamondButton, fallButton, healthButton;
     public GameObject information;
+
     public static bool fasterPlayer = false;
     public static bool moreDiamonds = false;
     public static bool fasterFalling = false;
     public static bool health = false;
     public AudioClip select;
     public AudioSource source;
-    public static Upgrades instance;
     public DangersSpawner diamondsSpawner;
 
     // Sorry, I don't know other way to save purchased things : (((. Maybe you know :D
     void Start()
     {
-        instance = this;
+        Instance = this;
         fasterPlayer = PlayerPrefs.GetInt("Faster", 0) == 1;
         moreDiamonds = PlayerPrefs.GetInt("MoreDiamonds", 0) == 1;
         fasterFalling = PlayerPrefs.GetInt("Fall", 0) == 1;
@@ -105,6 +107,7 @@ public class Upgrades : MonoBehaviour
         yield return new WaitForSeconds(3);
         info.SetActive(false);
     }
+
     public void ResetProgress() {
         source.PlayOneShot(select);
         PlayerPrefs.DeleteAll();

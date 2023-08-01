@@ -19,7 +19,7 @@ public class StartGame : MonoBehaviour
     {
         if (Input.GetKeyDown("r") && canStartGame)
         {
-            Upgrades.instance.source.PlayOneShot(Upgrades.instance.select);
+            Upgrades.Instance.source.PlayOneShot(Upgrades.Instance.select);
 
             Manager.SetActive(true);
             Spawners.SetActive(true);

@@ -26,7 +26,7 @@ public class Shop : MonoBehaviour
         diamondsText.text = PlayerPrefs.GetInt("Diamonds").ToString();
         if (Input.GetKeyDown("c") && !isOpen && GetComponent<StartGame>().canStartGame == true && GetComponent<StartGame>().isGameStarted == false)
         {
-            Upgrades.instance.source.PlayOneShot(Upgrades.instance.select);
+            Upgrades.Instance.source.PlayOneShot(Upgrades.Instance.select);
 
             shop.SetActive(true);
             menu.SetActive(false);
@@ -37,10 +37,12 @@ public class Shop : MonoBehaviour
         }
         else if (Input.GetKeyDown("c") && isOpen && GetComponent<StartGame>().canStartGame == false && GetComponent<StartGame>().isGameStarted == false)
         {
-            Upgrades.instance.source.PlayOneShot(Upgrades.instance.select);
+            Upgrades.Instance.source.PlayOneShot(Upgrades.Instance.select);
 
             shop.SetActive(false);
             menu.SetActive(true);
+
+            Upgrades.Instance.information.SetActive(false);
 
             menuAnim.Play("Base Layer.Menu", 0);
             isOpen = false;

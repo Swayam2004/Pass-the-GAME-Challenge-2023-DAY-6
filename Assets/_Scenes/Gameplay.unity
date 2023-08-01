@@ -416,7 +416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &99108730
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1258,6 +1258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525905d29685c5e408f03ef1231defed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _diamondImage: {fileID: 885032233}
   diamondText: {fileID: 842325143}
   distanceText: {fileID: 682341198}
   lastScoreText: {fileID: 889903821}
@@ -2518,10 +2519,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tracks:
+  - {fileID: 8300000, guid: 52267d0d4967b114892d038f3f01d892, type: 3}
+  - {fileID: 8300000, guid: 073cdc9fedb1f3e47bdab365fca8b503, type: 3}
   - {fileID: 8300000, guid: 641dd90cc80d340be98d4111256ccc6c, type: 3}
   - {fileID: 8300000, guid: e5369142c4ce04b3081306801263f880, type: 3}
   - {fileID: 8300000, guid: 343a7a54fd2b04262a1c5bd35900a93f, type: 3}
   - {fileID: 8300000, guid: 2c583dd124049433289c4ab823e7559b, type: 3}
+  - {fileID: 8300000, guid: a84821df68c03ee4baf5c4a3d21cb6e8, type: 3}
   shuffle: 1
 --- !u!1 &380185502
 GameObject:
@@ -2603,7 +2607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Faster Falling : 60'
+  m_text: 'Faster Falling : 90'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: feef952da990942f5809778c21b6d186, type: 2}
   m_sharedMaterial: {fileID: 8155448538238550518, guid: feef952da990942f5809778c21b6d186, type: 2}
@@ -3394,7 +3398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -325, y: 175}
+  m_AnchoredPosition: {x: -320, y: 175}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &500292314
@@ -4505,7 +4509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'More Health : 60'
+  m_text: 'More Health : 160'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: feef952da990942f5809778c21b6d186, type: 2}
   m_sharedMaterial: {fileID: 8155448538238550518, guid: feef952da990942f5809778c21b6d186, type: 2}
@@ -4568,7 +4572,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 68.107544, w: 0}
+  m_margin: {x: 0, y: 0, z: 82.90616, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4772,7 +4776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 6a296688fa596bc418561bbb1cbebe96, type: 2}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6029,7 +6033,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'More Diamonds: 60'
+  m_text: 'More Diamonds: 100'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: feef952da990942f5809778c21b6d186, type: 2}
   m_sharedMaterial: {fileID: 8155448538238550518, guid: feef952da990942f5809778c21b6d186, type: 2}
@@ -6092,7 +6096,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 68.107544, w: 0}
+  m_margin: {x: 0, y: 0, z: 79.1667, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7396,7 +7400,7 @@ GameObject:
   - component: {fileID: 885032234}
   - component: {fileID: 885032233}
   m_Layer: 5
-  m_Name: Image
+  m_Name: DiamondImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
