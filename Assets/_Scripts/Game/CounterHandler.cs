@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class CounterHandler : MonoBehaviour
 {
+    [SerializeField] private Image _diamondImage;
     [SerializeField] private TextMeshProUGUI diamondText;
     [SerializeField] private TextMeshProUGUI distanceText;
     [SerializeField] private TextMeshProUGUI lastScoreText;
@@ -47,6 +50,12 @@ public class CounterHandler : MonoBehaviour
     public void UpdateDiamondText(int amount)
     {   
         diamondText.text = amount.ToString();
+
+        float popDuration = 0.15f;
+        _diamondImage.transform.DOScale(1.15f, popDuration).OnComplete(() =>
+        {
+            _diamondImage.transform.DOScale(1f, popDuration);
+        });
     }
     // Update the text and calculates the distance value
     private void UpdateDistanceText()

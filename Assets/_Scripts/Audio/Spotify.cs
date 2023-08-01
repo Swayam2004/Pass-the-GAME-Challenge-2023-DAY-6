@@ -25,6 +25,8 @@ public class Spotify : MonoBehaviour
         // if there are no tracks stop
         if (tracks == null) return;
         // play tracks, select a new track when fishied to play the previuous one
+        SelectNextTrack();
+
         if (!source.isPlaying)
         {
             source.PlayOneShot(currentClip);
